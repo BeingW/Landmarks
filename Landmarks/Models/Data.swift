@@ -49,8 +49,10 @@ final class ImageStore {
     static var shared = ImageStore()
     
     func image(name: String) -> Image {
+        //image 의 이름을 입력받는다.
+        //image 이름에 대한 index 를 가져온다.
         let index = _guaranteeImage(name: name)
-        
+        //image 를 반환한다.
         return Image(images.values[index], scale: CGFloat(ImageStore.scale), label: Text(name))
     }
     
@@ -71,11 +73,11 @@ final class ImageStore {
     }
     
     fileprivate func _guaranteeImage(name: String) -> _ImageDictionary.Index {
-        //딕셔너리 객체에서 이름에 대한 이미지를 가져온다.
+        //딕셔너리 객체에서 이름에 대한 index 를 가져온다(index 를 이용해 딕셔너리의 key, value 를 가져올 수 있다)
         if let index = images.index(forKey: name) { return index }
-        //딕셔너리 객체에서 이름에 대한 이미지를 loadImage 를 이용해 확실히 대체한다.
+        //images 의 name key 에 loadImage(name:) 을 호출하여 해당 이름의 image 를 넣는다.
         images[name] = ImageStore.loadImage(name: name)
-        //이미지를 리턴한다.
+        //images 의 name 의 index 를 반환한다.
         return images.index(forKey: name)!
     }
 }
