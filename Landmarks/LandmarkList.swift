@@ -9,36 +9,48 @@
 import SwiftUI
 
 struct LandmarkList: View {
+    @State var showFavortiesOnly = true
+//    @EnvironmentObject var userData: UserData
+    
     var body: some View {
-//        List {
-//            LandmarkRow(landmark: landmarkData[0])
-//            LandmarkRow(landmark: landmarkData[1])
-//        }
-        //List 에 매개변수를 마음대로 넣을 수 있나? (\. 를 넣으면 매개변수에 들어간 객체의 변수를 가져올수 있다.)
-//        List(landmarkData, id: \.id) { landMark in
-//            LandmarkRow(landmark: landMark)
-//        }
-        //Model 에 Identifiable 타입을 부여하면 id 를 넣지 않아도 된다.
         NavigationView{
-            List(landmarkData) { landmark in
-                NavigationLink(destination: LandmarkDetail(landmark: landmark)) {
-                    LandmarkRow(landmark: landmark)
+            //TableView 와 비슷한 듯 -> ForEach
+            List {
+                //Toggle isOn 은 showFavortiesOnly 가 true 일때
+                Toggle(isOn: $showFavortiesOnly) {
+                    Text("Favorites only")
                 }
                 
+                ForEach(landmarkData) { landmark in
+                    //1.showFavoriteOnly 가 false 상태 이거나 landmark.isFavoirte 가 true 면
+//                    if !self.showFavortiesOnly || landmark.isFavorite {
+//                        NavigationLink(destination: LandmarkDetail(landmark: landmark)) {
+//                            LandmarkRow(landmark: landmark)
+//                        }
+//                    }
+                    
+                    if self.showFavortiesOnly {
+                        if landmark.isFavorite {
+                            NavigationLink(destination: LandmarkDetail(landmark: landmark)) {
+                                LandmarkRow(landmark: landmark)
+                            }
+                        }
+                    } else {
+                        NavigationLink(destination: LandmarkDetail(landmark: landmark)) {
+                            LandmarkRow(landmark: landmark)
+                        }
+                    }
+                }
             }
         .navigationBarTitle(Text("Landmarks"))
         }
-        
-        
     }
+    
+    
 }
 
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone SE", "iPhone XS Max"], id: \.self) { deviceName in
-            LandmarkList()
-                .previewDevice(PreviewDevice(rawValue: deviceName))
-                .previewDisplayName(deviceName)
-        }
+        LandmarkList()
     }
 }

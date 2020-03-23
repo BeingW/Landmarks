@@ -34,6 +34,7 @@
 		1991CEEF242452420087A74D /* hiddenlake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1991CEE2242452410087A74D /* hiddenlake.jpg */; };
 		1991CEF0242452420087A74D /* icybay.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1991CEE3242452410087A74D /* icybay.jpg */; };
 		1991CEF1242452420087A74D /* silversalmoncreek.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1991CEE4242452410087A74D /* silversalmoncreek.jpg */; };
+		1991CEF3242455450087A74D /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1991CEF2242455450087A74D /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		1991CEE2242452410087A74D /* hiddenlake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hiddenlake.jpg; sourceTree = "<group>"; };
 		1991CEE3242452410087A74D /* icybay.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icybay.jpg; sourceTree = "<group>"; };
 		1991CEE4242452410087A74D /* silversalmoncreek.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = silversalmoncreek.jpg; sourceTree = "<group>"; };
+		1991CEF2242455450087A74D /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			children = (
 				194A12E22421A3F900312D7D /* Landmark.swift */,
 				194A12E92421A86100312D7D /* Data.swift */,
+				1991CEF2242455450087A74D /* SwiftUIView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				194A12AC242195E900312D7D /* AppDelegate.swift in Sources */,
 				194A12DC242199D700312D7D /* CircleImage.swift in Sources */,
 				194A12E024219CA100312D7D /* MapView.swift in Sources */,
+				1991CEF3242455450087A74D /* SwiftUIView.swift in Sources */,
 				194A13072421B65D00312D7D /* LandmarkList.swift in Sources */,
 				194A12AE242195E900312D7D /* SceneDelegate.swift in Sources */,
 				194A12B0242195E900312D7D /* LandmarkDetail.swift in Sources */,
